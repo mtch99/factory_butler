@@ -1,5 +1,5 @@
 from typing import List
-from entities import *
+from .entities import *
 
 
 class DistributionProblem:
@@ -12,5 +12,5 @@ class DistributionProblem:
 
 
 class Solution:
-    def __init__(self, sales: Sale, profit: int):
+    def __init__(self, sales: List[Sale], profit: int):
         pass

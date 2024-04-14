@@ -1,5 +1,5 @@
 - [x] Problem entity for model1
-- [ ] Problem generator for model1
+- [x] Problem generator for model1
 - [ ] Ampl solver for model1
 - [ ] Test
     - [ ] generate random problem
