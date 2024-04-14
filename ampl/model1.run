@@ -1,0 +1,15 @@
+
+reset;
+
+model Projet_session.mod;
+
+data Projet_session.dat;
+
+option solver gurobi;
+
+solve;
+
+display Ventes;
+
+display Profit;
+

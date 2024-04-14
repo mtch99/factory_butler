@@ -1,0 +1,39 @@
+## Ensemble
+set Distributeur = A B C D E F;
+set Usine = 1 2 3 4 5;
+
+## Parametres
+param demande :=
+	A 125
+	B 150
+	C 95
+	D 200
+	E 110
+	F 70;
+
+param capacite:=
+	1 100
+	2 135
+	3 240
+	4 145
+	5 110;
+
+param cf_livraison := 40;
+
+param cv_transport := 0.15;
+
+param distance:
+	A	B	C	D	E	F =
+1	30	45	20	50	65	15
+2	90	15	20	55	85	100
+3	70	85	40	25	70	55
+4	60	25	30	105	95	75
+5	75	80	65	90	45	85;
+
+param cf_penurie :=
+	A 400
+	B 450
+	C 375
+	D 550
+	E 500
+	F 450;
