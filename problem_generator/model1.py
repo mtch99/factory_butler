@@ -1,7 +1,7 @@
 
 from typing import List, Tuple
 from uuid import uuid4
-from problem.distribution_problem.model1 import Model1 as Model1Problem
+from problem.distribution_problem.model1 import Problem_1 as Problem_1
 from problem.distribution_problem.entities import Distance, Distributor, Factory, Product, Sale
 from problem_generator import Generator
 import random
@@ -10,13 +10,14 @@ import random
 class Model1(Generator):
     def __init__(
         self,
-        delivery_fee_range: Tuple[int, int] = (100, 300),
-        transportation_cost_range: Tuple[int, int] = (100, 200),
-        price_range:Tuple[int, int] = (50, 500),
+        delivery_fee_range: Tuple[float, float] = (100, 300),
+        transportation_cost_range: Tuple[float, float] = (100, 200),
+        price_range:Tuple [float, float] = (50, 500),
         demand_range: Tuple[int, int] = (10, 100),
-        cost_of_shortage_range: Tuple[int, int] = (5, 50),
+        cost_of_shortage_range: Tuple[float, float] = (5, 50),
         quantity_range: Tuple[int, int] = (1, 20),
-        distance_range: Tuple[int, int] = (1, 1000),
+        distance_range: Tuple[float, float] = (1, 1000),
+        capacity_range: Tuple[int, int] = (1, 1000),
         num_products=5,
         num_factories=3,
         num_distributors=4
@@ -32,10 +33,11 @@ class Model1(Generator):
         self.num_factories = num_factories
         self.num_distributors = num_distributors
         self._distance_list: List[Distance] = []
-        self._product_list: List[Product] = []
+        self._product: Product = Product("Product", 0)
         self._factory_list: List[Factory] = []
         self._distributor_list: List[Distributor] = []        
-
+        self.capacity_range = capacity_range
+        return
     
     def generate(self):
         transportation_cost = self.gen_transportation_cost()
@@ -44,10 +46,10 @@ class Model1(Generator):
         self.__gen_factory_list()
         self.__gen_distributor_list()
         self.__gen_distance_list__()
-        problem = Model1Problem(
+        problem = Problem_1(
             fixed_delivery_fee=delivery_fee,
             transportation_cost=transportation_cost,
-            products=self._product_list,
+            product=self._product,
             factories=self._factory_list,
             distributors=self._distributor_list, 
             distances=self._distance_list
@@ -58,15 +60,13 @@ class Model1(Generator):
     def __gen_product(self, name=f"Product_{str(uuid4())}"):
         product =  Product(
             name,
-            price=random.randint(*self.price_range)
+            price=random.uniform(*self.price_range)
         )
         return product
     
     def __gen__product_list(self):
-        self._product_list = []
-        for i in range(len(self._product_list)):
-            product = self.__gen_product(name=f"Product_{len(self._product_list)+1}")
-            self._product_list.append(product)
+        product = self.__gen_product(name=f"Product")
+        self._product = product
         return
     
 
@@ -74,7 +74,8 @@ class Model1(Generator):
         factory =  Factory(
             name=f"Factory_{len(self._factory_list)+1}",
             lon=random.uniform(-180, 180),
-            lat=random.uniform(-90, 90)
+            lat=random.uniform(-90, 90),
+            capacity=random.randint(*self.capacity_range)
         )
         return factory
     
@@ -88,7 +89,7 @@ class Model1(Generator):
         distributor = Distributor(
             name=f"Distributor_{len(self._distributor_list)+1}",
             demand=random.randint(*self.demand_range),
-            cost_of_shortage=random.randint(*self.cost_of_shortage_range)
+            cost_of_shortage=random.uniform(*self.cost_of_shortage_range)
         )
         return distributor
     
@@ -100,7 +101,7 @@ class Model1(Generator):
 
 
     def __gen_distance__(self, start_location, end_location)->Distance:
-        distance_value = random.randint(*self.distance_range)
+        distance_value = random.uniform(*self.distance_range)
         distance = Distance(distance_value,start_location, end_location)
         return distance
 

@@ -6,10 +6,10 @@ from problem.problem import Problem
 
 
 @dataclass
-class Model1(DistributionProblem):
+class Problem_1(DistributionProblem):
     fixed_delivery_fee: float
     transportation_cost: float # $/km
-    products: List[Product]
+    product:  Product
     factories: List[Factory]
     distributors: List[Distributor]
     distances: List[Distance]
@@ -33,3 +33,8 @@ class Model1(DistributionProblem):
             output += f"name: {factory.name} \n"
             output += f"localisation: {{latitude: {factory.lat}, longitude: {factory.lon}}}\n"
         return output
+    
+
+@dataclass
+class Solution_1: 
+    sales: List[Sale]

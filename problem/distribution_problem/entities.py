@@ -17,18 +17,19 @@ class Location:
 class Distributor(Record):
     name: str
     demand: int
-    cost_of_shortage: int
+    cost_of_shortage: float
 
 
 @dataclass
 class Factory(Record, Location): 
     name: str
+    capacity: int
 
 
 @dataclass
 class Product(Record):
     name: str
-    price: int
+    price: float
 
 
 @dataclass
