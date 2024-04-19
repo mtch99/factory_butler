@@ -89,12 +89,14 @@ class Model1(Generator):
         distributor = Distributor(
             name=f"Distributor_{len(self._distributor_list)+1}",
             demand=random.randint(*self.demand_range),
-            cost_of_shortage=random.uniform(*self.cost_of_shortage_range)
+            cost_of_shortage=random.uniform(*self.cost_of_shortage_range),
+            lon=random.uniform(-90,90),
+            lat=random.uniform(-90,90)
         )
         return distributor
     
     def __gen_distributor_list(self):
-        for i in range(len(self._distributor_list)):
+        for i in range(self.num_distributors):
             distributor = self.gen_distributor()
             self._distributor_list.append(distributor)
         return

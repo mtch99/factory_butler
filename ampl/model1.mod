@@ -4,12 +4,12 @@ set Usine;  # Usines
 
 # Parametres
 param demande{Distributeur}; # demande par distributeurs
+param cf_penurie{Distributeur}; # Cout fixe de pénurie par point de ditribution
 param capacite{Usine}; # Capacoté par usine
+param distance{Usine, Distributeur}; # distance entre les usines et points de distribution
 param cf_livraison; # Cout fixe de livraison
 param cv_transport; # Cout variable de transport par km
-param distance{Usine, Distributeur}; # distance entre les usines et points de distribution
-param cf_penurie{Distributeur}; # Cout fixe de pénurie par point de ditribution
-param prix_vente = 150; # Prix de vente
+param prix_vente; # Prix de vente
 
 
 # Variable de decision

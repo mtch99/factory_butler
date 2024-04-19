@@ -1,9 +1,10 @@
 - [x] Problem entity for model1
 - [x] Problem generator for model1
-- [ ] Ampl solver for model1
+- [x] Ampl solver for model1
 - [ ] Test
-    - [ ] generate random problem
-    - [ ] solve problem using the model1 solver
+    - [ ] create problem from .dat file
+    - [x] solve problem using the model1 solver
+    - [ ] validate that the solution is the one expected
 
 - [ ] Persist random problem instance in memory
 - [ ] Persist solution from random problem in memory
