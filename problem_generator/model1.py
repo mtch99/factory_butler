@@ -54,6 +54,7 @@ class Model1(Generator):
             distributors=self._distributor_list, 
             distances=self._distance_list
         )
+        print('Problem successfully generated')
         return problem
 
 

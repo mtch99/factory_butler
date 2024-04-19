@@ -6,7 +6,7 @@
     - [x] solve problem using the model1 solver
     - [ ] validate that the solution is the one expected
 
-- [ ] Persist random problem instance in memory
+- [x] Persist random problem instance in memory
 - [ ] Persist solution from random problem in memory
 - [ ] Create CLI
     - [ ] Solve
