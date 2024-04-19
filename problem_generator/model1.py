@@ -42,7 +42,7 @@ class Model1(Generator):
     def generate(self):
         transportation_cost = self.gen_transportation_cost()
         delivery_fee = self.gen_fixed_delivery_fee()
-        self.__gen__product_list
+        self.__gen__product_list()
         self.__gen_factory_list()
         self.__gen_distributor_list()
         self.__gen_distance_list__()

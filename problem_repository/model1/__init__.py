@@ -38,8 +38,6 @@ def save_problem_to_json(problem:Problem_1, filename=default_problem_filename):
         print(f"Failed to save the problem: {e}")
 
 
-
-
 def deserialize_problem(data):
     factories = [Factory(**f) for f in data['factories']]
     distributors = [Distributor(**d) for d in data['distributors']]
@@ -60,7 +58,6 @@ def deserialize_problem(data):
         distributors=distributors,
         distances=distances
     )
-
 
 
 

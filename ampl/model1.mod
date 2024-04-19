@@ -19,7 +19,7 @@ var Penurie{Distributeur} binary; # 0 ou 1 si la demandeande est pas satisfaite 
 
 # Fonction objective
 maximize Profit:
-    sum {u in Usine, d in Distributeur} ((prix_vente*Ventes[u,d])-(cf_livraison + (cv_transport*distance[u,d])) * Ventes[u,d]) + sum {d in Distributeur} (Penurie[d] * cf_penurie[d]);
+    sum {u in Usine, d in Distributeur} ((prix_vente*Ventes[u,d])-(cf_livraison + (cv_transport*distance[u,d])) * Ventes[u,d]) - sum {d in Distributeur} (Penurie[d] * cf_penurie[d]);
 
 # Contraintes
 subject to ContrainteCapacite {u in Usine}:
