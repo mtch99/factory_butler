@@ -8,7 +8,7 @@ from problem.distribution_problem.entities import Location
 from problem.distribution_problem.model1 import Problem_1, Factory, Distributor, Product, Distance, Sale  # ensure all are imported
 
 base_problem_path = os.path.dirname(os.path.realpath(__file__))
-default_problem_filename = './last_problem.json'
+default_problem_filename = 'last_problem.json'
 
 # Returns Problem_1 instance or None
 def get_last_problem():
@@ -17,7 +17,7 @@ def get_last_problem():
         print("No problem file found.")
         return None
     try:
-        with open(default_problem_filename, 'r') as file:
+        with open(default_problem_path, 'r') as file:
             data = json.load(file)
         return deserialize_problem(data)
     except json.JSONDecodeError as e:

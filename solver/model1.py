@@ -35,8 +35,10 @@ class Solver_1(Solver):
 
 
 	def parse_solution(self):
-		sales = ampl.get_variable("Ventes").get_values()
+		sales = ampl.get_variable("Ventes").get_values().to_dict()
 		shortage = ampl.get_variable("Penurie").get_values().toDict()
+		profit = ampl.get_objective("Profit").value()
+		# print("S")
 		return
 
 	def _set_data(self, problem: Problem_1):
