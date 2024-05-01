@@ -28,8 +28,8 @@ def get_problem(file_path=default_problem_file_path):
         return None
 
 
-def save_problem_to_json(problem:Problem_1, filename=default_problem_file_path):
-    filepath = os.path.join(base_problem_path, filename)
+def save_problem_to_json(problem:Problem_1, file_path=default_problem_file_path):
+    filepath = os.path.join(base_problem_path, file_path)
     try:
         with open(filepath, 'w') as f:
             json.dump(problem, f, cls=ComplexEncoder, indent=4)

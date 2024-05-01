@@ -7,8 +7,11 @@ import sys
 
 
 generator = Model1Generator()
-
+file_path: str = ""
 problem: Problem_1
+
+# Extraire l'option de la commande (optionnellement)
+# Ceci permettra le traitement en lot
 if len(sys.argv) > 1:
     file_path = sys.argv[1]
     problem = get_problem(file_path) or generator.generate()
@@ -18,11 +21,13 @@ else:
 
 
 print(problem)
-save_problem_to_json(problem)
+if(file_path != ""): save_problem_to_json(problem, file_path)
 
-solver = Solver_1()
-solution = solver.solve(problem)
-print(solution)
+else: save_problem_to_json(problem)
+ 
+ampl_solver = Solver_1()
+ampl_solution = ampl_solver.solve(problem)
+print(f"Sution ampl: {ampl_solution}")
 
 
 minizinc_solver = MinizncSolver()

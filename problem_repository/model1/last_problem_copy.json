@@ -1,0 +1,252 @@
+{
+    "fixed_delivery_fee": 112.74685215917583,
+    "transportation_cost": 0.26828651180636154,
+    "product": {
+        "name": "Product",
+        "price": 344.1400110538095
+    },
+    "factories": [
+        {
+            "lon": -132.00831143149006,
+            "lat": 72.30120840964872,
+            "name": "Factory_1",
+            "capacity": 313
+        },
+        {
+            "lon": 143.0698024392495,
+            "lat": 23.384989841113693,
+            "name": "Factory_2",
+            "capacity": 161
+        },
+        {
+            "lon": -165.54061139905642,
+            "lat": -75.74321775110067,
+            "name": "Factory_3",
+            "capacity": 85
+        }
+    ],
+    "distributors": [
+        {
+            "lon": 25.295477498856826,
+            "lat": 86.59668477787383,
+            "name": "Distributor_1",
+            "demand": 417,
+            "cost_of_shortage": 1443.8140734528938
+        },
+        {
+            "lon": -7.69276521384036,
+            "lat": -73.55104572680476,
+            "name": "Distributor_2",
+            "demand": 91,
+            "cost_of_shortage": 570.356269118304
+        },
+        {
+            "lon": -17.048736592649405,
+            "lat": 9.123081861162163,
+            "name": "Distributor_3",
+            "demand": 326,
+            "cost_of_shortage": 1387.477280948674
+        },
+        {
+            "lon": 56.19732812821394,
+            "lat": -64.31556486205473,
+            "name": "Distributor_4",
+            "demand": 515,
+            "cost_of_shortage": 388.4266353256304
+        }
+    ],
+    "distances": [
+        {
+            "value": 743.5638028992477,
+            "start_location": {
+                "lon": -132.00831143149006,
+                "lat": 72.30120840964872,
+                "name": "Factory_1",
+                "capacity": 313
+            },
+            "destination": {
+                "lon": 25.295477498856826,
+                "lat": 86.59668477787383,
+                "name": "Distributor_1",
+                "demand": 417,
+                "cost_of_shortage": 1443.8140734528938
+            }
+        },
+        {
+            "value": 427.2992150542091,
+            "start_location": {
+                "lon": -132.00831143149006,
+                "lat": 72.30120840964872,
+                "name": "Factory_1",
+                "capacity": 313
+            },
+            "destination": {
+                "lon": -7.69276521384036,
+                "lat": -73.55104572680476,
+                "name": "Distributor_2",
+                "demand": 91,
+                "cost_of_shortage": 570.356269118304
+            }
+        },
+        {
+            "value": 422.0829064584087,
+            "start_location": {
+                "lon": -132.00831143149006,
+                "lat": 72.30120840964872,
+                "name": "Factory_1",
+                "capacity": 313
+            },
+            "destination": {
+                "lon": -17.048736592649405,
+                "lat": 9.123081861162163,
+                "name": "Distributor_3",
+                "demand": 326,
+                "cost_of_shortage": 1387.477280948674
+            }
+        },
+        {
+            "value": 137.34774984813012,
+            "start_location": {
+                "lon": -132.00831143149006,
+                "lat": 72.30120840964872,
+                "name": "Factory_1",
+                "capacity": 313
+            },
+            "destination": {
+                "lon": 56.19732812821394,
+                "lat": -64.31556486205473,
+                "name": "Distributor_4",
+                "demand": 515,
+                "cost_of_shortage": 388.4266353256304
+            }
+        },
+        {
+            "value": 949.4373639476115,
+            "start_location": {
+                "lon": 143.0698024392495,
+                "lat": 23.384989841113693,
+                "name": "Factory_2",
+                "capacity": 161
+            },
+            "destination": {
+                "lon": 25.295477498856826,
+                "lat": 86.59668477787383,
+                "name": "Distributor_1",
+                "demand": 417,
+                "cost_of_shortage": 1443.8140734528938
+            }
+        },
+        {
+            "value": 512.6383275062302,
+            "start_location": {
+                "lon": 143.0698024392495,
+                "lat": 23.384989841113693,
+                "name": "Factory_2",
+                "capacity": 161
+            },
+            "destination": {
+                "lon": -7.69276521384036,
+                "lat": -73.55104572680476,
+                "name": "Distributor_2",
+                "demand": 91,
+                "cost_of_shortage": 570.356269118304
+            }
+        },
+        {
+            "value": 441.67751032409484,
+            "start_location": {
+                "lon": 143.0698024392495,
+                "lat": 23.384989841113693,
+                "name": "Factory_2",
+                "capacity": 161
+            },
+            "destination": {
+                "lon": -17.048736592649405,
+                "lat": 9.123081861162163,
+                "name": "Distributor_3",
+                "demand": 326,
+                "cost_of_shortage": 1387.477280948674
+            }
+        },
+        {
+            "value": 40.94985207540891,
+            "start_location": {
+                "lon": 143.0698024392495,
+                "lat": 23.384989841113693,
+                "name": "Factory_2",
+                "capacity": 161
+            },
+            "destination": {
+                "lon": 56.19732812821394,
+                "lat": -64.31556486205473,
+                "name": "Distributor_4",
+                "demand": 515,
+                "cost_of_shortage": 388.4266353256304
+            }
+        },
+        {
+            "value": 583.480501065936,
+            "start_location": {
+                "lon": -165.54061139905642,
+                "lat": -75.74321775110067,
+                "name": "Factory_3",
+                "capacity": 85
+            },
+            "destination": {
+                "lon": 25.295477498856826,
+                "lat": 86.59668477787383,
+                "name": "Distributor_1",
+                "demand": 417,
+                "cost_of_shortage": 1443.8140734528938
+            }
+        },
+        {
+            "value": 858.3776992602963,
+            "start_location": {
+                "lon": -165.54061139905642,
+                "lat": -75.74321775110067,
+                "name": "Factory_3",
+                "capacity": 85
+            },
+            "destination": {
+                "lon": -7.69276521384036,
+                "lat": -73.55104572680476,
+                "name": "Distributor_2",
+                "demand": 91,
+                "cost_of_shortage": 570.356269118304
+            }
+        },
+        {
+            "value": 181.15937415944174,
+            "start_location": {
+                "lon": -165.54061139905642,
+                "lat": -75.74321775110067,
+                "name": "Factory_3",
+                "capacity": 85
+            },
+            "destination": {
+                "lon": -17.048736592649405,
+                "lat": 9.123081861162163,
+                "name": "Distributor_3",
+                "demand": 326,
+                "cost_of_shortage": 1387.477280948674
+            }
+        },
+        {
+            "value": 834.974681359925,
+            "start_location": {
+                "lon": -165.54061139905642,
+                "lat": -75.74321775110067,
+                "name": "Factory_3",
+                "capacity": 85
+            },
+            "destination": {
+                "lon": 56.19732812821394,
+                "lat": -64.31556486205473,
+                "name": "Distributor_4",
+                "demand": 515,
+                "cost_of_shortage": 388.4266353256304
+            }
+        }
+    ]
+}
