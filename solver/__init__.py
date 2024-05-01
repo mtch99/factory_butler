@@ -50,4 +50,4 @@ class Solver:
         self._terminate()
         # Retourner une solution
         # TODO Le code ci-dessous est un code temporaire 
-        return Solution([],0)
+        return Solution(0, [], [])

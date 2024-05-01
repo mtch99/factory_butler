@@ -1,5 +1,5 @@
 from typing import List
-from .entities import *
+from .entities import * # type: ignore
 
 
 class DistributionProblem:
@@ -8,9 +8,4 @@ class DistributionProblem:
             factories: List[Factory],
             distributorList: List[Distributor]
     ):
-        pass
-
-
-class Solution:
-    def __init__(self, sales: List[Sale], profit: int):
         pass

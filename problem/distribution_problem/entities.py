@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import List
 import uuid
 
 @dataclass
@@ -58,20 +59,13 @@ class Product(Record):
 
 @dataclass
 class Sale(Record):
-    product: Product
-    factory: Factory
-    distributor: Distributor
+    factory: str
+    distributor: str
     quantity: int
 
-    def __repr__(self):
-        return (f"Sale(product={self.product.name}, factory={self.factory.name}, "
-                f"distributor={self.distributor.name}, quantity={self.quantity})")
 
     def __str__(self):
-        return (f"Sale - Quantity: {self.quantity}\n"
-                f"  Product: {self.product.name}\n"
-                f"  Factory: {self.factory.name}\n"
-                f"  Distributor: {self.distributor.name}")
+        return f"{self.factory} ----> {self.distributor}: {self.quantity} items \n"
 
 @dataclass
 class Distance(Record):
@@ -85,3 +79,22 @@ class Distance(Record):
 
     def __str__(self):
         return f"Distance: {self.value} km from {self.start_location.name} to {self.destination.name}"
+
+
+@dataclass
+class Solution(Record):
+    profit: float 
+    sales: List[Sale]
+    shortage: List[str] # List of distributors with shortage
+
+
+    def __str__(self):
+        return f"Solution: \n Profit: {self.profit} \n {self._stringify_sales()}"
+    
+    def _stringify_sales(self):
+        result =  "--------- Sales: ----------- \n"
+        for sale in self.sales:
+            result += f"{sale}\n"
+
+        result += "------------------------\n"
+        return result

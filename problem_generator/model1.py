@@ -1,7 +1,7 @@
 
 from typing import List, Tuple
 from uuid import uuid4
-from problem.distribution_problem.model1 import Problem_1 as Problem_1
+from problem.distribution_problem.DistributionProblem import Problem_1 as Problem_1
 from problem.distribution_problem.entities import Distance, Distributor, Factory, Product, Sale
 from problem_generator import Generator
 import random
@@ -10,14 +10,14 @@ import random
 class Model1(Generator):
     def __init__(
         self,
-        delivery_fee_range: Tuple[float, float] = (100, 300),
-        transportation_cost_range: Tuple[float, float] = (100, 200),
-        price_range:Tuple [float, float] = (50, 500),
-        demand_range: Tuple[int, int] = (10, 100),
-        cost_of_shortage_range: Tuple[float, float] = (5, 50),
+        delivery_fee_range: Tuple[float, float] = (40, 120),
+        transportation_cost_range: Tuple[float, float] = (0.15, 0.45),
+        price_range:Tuple [float, float] = (150, 600),
+        demand_range: Tuple[int, int] = (70, 600),
+        cost_of_shortage_range: Tuple[float, float] = (375, 1650),
         quantity_range: Tuple[int, int] = (1, 20),
         distance_range: Tuple[float, float] = (1, 1000),
-        capacity_range: Tuple[int, int] = (1, 1000),
+        capacity_range: Tuple[int, int] = (15, 315),
         num_products=5,
         num_factories=3,
         num_distributors=4

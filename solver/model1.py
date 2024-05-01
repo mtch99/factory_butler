@@ -7,8 +7,8 @@ import pandas as pd
 import numpy as np
 
 from problem.distribution_problem import Solution
-from problem.distribution_problem.entities import Distance, Distributor, Factory, Product
-from problem.distribution_problem.model1 import Problem_1 as Problem_1, Solution_1
+from problem.distribution_problem.entities import Distance, Distributor, Factory, Product, Sale
+from problem.distribution_problem.DistributionProblem import Problem_1 as Problem_1, Solution_1
 from solver import Solver
 
 # configure ampl instance
@@ -26,7 +26,7 @@ class Solver_1(Solver):
 		self._set_data(problem)
 		ampl.solve()
 		solution = self.parse_solution()
-		return Solution([], 0)
+		return solution
   
 	def _prepare(self):
 		# ampl.reset()
@@ -35,15 +35,24 @@ class Solver_1(Solver):
 
 
 	def parse_solution(self):
-		sales = ampl.get_variable("Ventes").get_values().to_dict()
-		shortage = ampl.get_variable("Penurie").get_values().toDict()
-		profit = ampl.get_objective("Profit").value()
-		print("--------\n--------\nSolution\n--------\n")
-		print(f"Profit: {profit}\n")
-		print(f"Ventes: \n {sales}\n")
-		print(f"Pénurie: {shortage}\n")
+		sales_result = ampl.get_variable("Ventes").get_values().to_dict()
+		sales = []
+		for key, value in sales_result.items():
+			sales.append(Sale(key[0], key[1], value))
 
-		return
+		shortage_list = ampl.get_variable("Penurie").get_values().toDict()
+		solution_shortage = []
+		for distributor, y in shortage_list.items():
+			if(y == 1): solution_shortage.append(distributor)
+
+		profit = ampl.get_objective("Profit").value()
+		solution = Solution(profit, sales, solution_shortage)
+		# print("--------\n--------\nSolution\n--------\n")
+		# print(f"Profit: {profit}\n")
+		# print(f"Ventes: \n {sales}\n")
+		# print(f"Pénurie: {shortage_list}\n")
+
+		return solution
 
 	def _set_data(self, problem: Problem_1):
 		self._set_factory_list(problem.factories)

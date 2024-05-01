@@ -5,14 +5,14 @@ import os
 from dataclasses import dataclass, field, asdict, is_dataclass
 from typing import List, Optional
 from problem.distribution_problem.entities import Location
-from problem.distribution_problem.model1 import Problem_1, Factory, Distributor, Product, Distance, Sale  # ensure all are imported
+from problem.distribution_problem.DistributionProblem import Problem_1, Factory, Distributor, Product, Distance, Sale  # ensure all are imported
 
 base_problem_path = os.path.dirname(os.path.realpath(__file__))
-default_problem_filename = 'last_problem.json'
+default_problem_file_path = '../../last_problem.json'
 
 # Returns Problem_1 instance or None
-def get_last_problem():
-    default_problem_path = os.path.join(base_problem_path, default_problem_filename)
+def get_problem(file_path=default_problem_file_path):
+    default_problem_path = os.path.join(base_problem_path, file_path)
     if not os.path.exists(default_problem_path):
         print("No problem file found.")
         return None
@@ -28,7 +28,7 @@ def get_last_problem():
         return None
 
 
-def save_problem_to_json(problem:Problem_1, filename=default_problem_filename):
+def save_problem_to_json(problem:Problem_1, filename=default_problem_file_path):
     filepath = os.path.join(base_problem_path, filename)
     try:
         with open(filepath, 'w') as f:

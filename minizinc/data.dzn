@@ -1,0 +1,19 @@
+% Ensembles
+Distributeur = { A, B, C, D, E, F };
+Usine = [un, deux, trois, quatre, cinq];
+ prix_vente = 150;
+ cf_livraison = 40;
+ cv_transport= 0.15;
+% Parametres
+demande = [125, 150, 95, 200, 110, 70];
+
+capacite = [100,135,240,145,110];
+
+
+distance = [| 30, 45, 20, 50, 65, 15,
+            | 90, 15, 20, 55, 85, 100,
+            | 70, 85, 40, 25, 70, 55,
+            | 60, 25, 30, 105, 95, 75,
+            | 75, 80, 65, 90, 45, 85 |];
+
+cf_penurie = [400, 450, 375, 550, 500, 450];
